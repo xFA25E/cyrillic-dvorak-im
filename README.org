@@ -1,0 +1,4 @@
+#+TITLE: Cyrillic dvorak input method for emacs
+
+I use dvorak, so default emacs input methods do not work as expected. But this
+small package from [[https://www.emacswiki.org/emacs/cyrillic-dvorak.el][EmacsWiki]] helps.
