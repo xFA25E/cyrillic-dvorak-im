@@ -2,8 +2,10 @@
 
 ;; Copyright (C) 2019
 
-;; Author:
+;; Author: Valeriy Litkovskyy <vlr.ltkvsk@protonmail.com>
+;; URL: https://github.com/xFA25E/package-name
 ;; Version: 0.1.0
+;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: i18n
 
 ;; This program is free software; you can redistribute it and/or modify
