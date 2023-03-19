@@ -1,0 +1,33 @@
+name: "CI"
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        emacs_version:
+          - 24.4
+          - 24.5
+          - 25.1
+          - 25.2
+          - 26.1
+          - 26.2
+          - 26.3
+          - 27.1
+          - 27.2
+          - 28.1
+          - 28.2
+          - release-snapshot
+          - snapshot
+    steps:
+    - uses: purcell/setup-emacs@master
+      with:
+        version: ${{ matrix.emacs_version }}
+
+    - uses: actions/checkout@v3
+    - name: Run nix check
+      run: nix --extra-experimental-features "nix-command flakes" flake check
+    - name: Run tests
+      run: nix --extra-experimental-features "nix-command flakes" develop -c eldev --unstable -p -d -t -T test
